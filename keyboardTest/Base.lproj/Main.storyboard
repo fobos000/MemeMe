@@ -8,7 +8,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="keyboardTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MemeMeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,43 +20,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vjw-Cu-ufA">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rno-33-PHg">
-                                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                        <animations/>
-                                        <items>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="uLG-6z-QdH"/>
-                                            <barButtonItem systemItem="camera" id="KjF-1T-99v">
-                                                <connections>
-                                                    <action selector="cameraItemTapped:" destination="BYZ-38-t0r" id="l4I-op-rks"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="Z4O-I2-X1r"/>
-                                            <barButtonItem title="Album" id="D4h-Kd-mEF">
-                                                <connections>
-                                                    <action selector="albumItemTapped:" destination="BYZ-38-t0r" id="V4s-iO-cyW"/>
-                                                </connections>
-                                            </barButtonItem>
-                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="RM4-vb-Xl0"/>
-                                        </items>
-                                    </toolbar>
-                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoN-Pm-2ac">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <animations/>
-                                        <items>
-                                            <navigationItem title="Title" id="ClG-Er-I62">
-                                                <barButtonItem key="leftBarButtonItem" systemItem="action" id="zig-iD-LZ1">
-                                                    <connections>
-                                                        <action selector="shareTapped:" destination="BYZ-38-t0r" id="ha4-wr-W5g"/>
-                                                    </connections>
-                                                </barButtonItem>
-                                                <barButtonItem key="rightBarButtonItem" title="Cancel" id="Mac-Ls-0WC">
-                                                    <connections>
-                                                        <action selector="cancelTapped:" destination="BYZ-38-t0r" id="lvb-wh-N4Y"/>
-                                                    </connections>
-                                                </barButtonItem>
-                                            </navigationItem>
-                                        </items>
-                                    </navigationBar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykK-zc-DcK">
                                         <rect key="frame" x="0.0" y="44" width="320" height="480"/>
                                         <subviews>
@@ -101,6 +64,43 @@
                                             <constraint firstItem="Qvf-Dc-lRg" firstAttribute="leading" secondItem="ykK-zc-DcK" secondAttribute="leading" constant="10" id="ywg-Hk-oWV"/>
                                         </constraints>
                                     </view>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rno-33-PHg">
+                                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                        <animations/>
+                                        <items>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="uLG-6z-QdH"/>
+                                            <barButtonItem systemItem="camera" id="KjF-1T-99v">
+                                                <connections>
+                                                    <action selector="cameraItemTapped:" destination="BYZ-38-t0r" id="l4I-op-rks"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="Z4O-I2-X1r"/>
+                                            <barButtonItem title="Album" id="D4h-Kd-mEF">
+                                                <connections>
+                                                    <action selector="albumItemTapped:" destination="BYZ-38-t0r" id="V4s-iO-cyW"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="RM4-vb-Xl0"/>
+                                        </items>
+                                    </toolbar>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VoN-Pm-2ac">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <animations/>
+                                        <items>
+                                            <navigationItem title="Title" id="ClG-Er-I62">
+                                                <barButtonItem key="leftBarButtonItem" systemItem="action" id="zig-iD-LZ1">
+                                                    <connections>
+                                                        <action selector="shareTapped:" destination="BYZ-38-t0r" id="ha4-wr-W5g"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" title="Cancel" id="Mac-Ls-0WC">
+                                                    <connections>
+                                                        <action selector="cancelTapped:" destination="BYZ-38-t0r" id="lvb-wh-N4Y"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

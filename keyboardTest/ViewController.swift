@@ -43,21 +43,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
         updateActionButton()
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        if (memeImageView.image?.size.width > memeImageView.image?.size.height) {
-            setOrientaion(UIInterfaceOrientation.LandscapeLeft)
-        } else if (memeImageView.image?.size.height > memeImageView.image?.size.width){
-            setOrientaion(UIInterfaceOrientation.Portrait)
-        }
-    }
-    
     override func viewWillDisappear(animated: Bool) {
         unsubscribeToKeyboardNotifications()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "unwindToMainMenu" {
+            
+        }
     }
     
     override func prefersStatusBarHidden() -> Bool {
@@ -69,12 +67,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.Portrait, UIInterfaceOrientationMask.LandscapeLeft]
+        if (memeImageView.image?.size.width > memeImageView.image?.size.height) {
+            return [UIInterfaceOrientationMask.LandscapeLeft]
+        } else {
+            return [UIInterfaceOrientationMask.Portrait]
+        }
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        dismissViewControllerAnimated(true, completion: nil)
         memeImageView.image = image
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -158,6 +160,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIDevice.currentDevice().setValue(orientation.rawValue, forKey: "orientation")
     }
     
+    func saveMeme() {
+        if let meme = self.meme {
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            appDelegate.memes.append(meme)
+        }
+    }
+    
     @IBAction func cameraItemTapped(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -179,15 +188,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let shareItems = [meme!.memedImage]
             let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
             activityViewController.excludedActivityTypes = [UIActivityTypePostToWeibo, UIActivityTypePostToFlickr]
+            activityViewController.completionWithItemsHandler = {
+                (activity, success, items, error) in
+                if success {
+                    self.saveMeme()
+                }
+            }
             presentViewController(activityViewController, animated: true, completion: nil)
         }
     }
     
-    @IBAction func cancelTapped(sender: AnyObject) {
-        memeImageView.image = nil
-        topTextField.text = topTextPlaceholder
-        bottomTextField.text = bottomTextPlaceholder
-        actionButton.enabled = false
-    }
 }
 

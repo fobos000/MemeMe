@@ -11,7 +11,11 @@ import UIKit
 class RootNavigationController: UINavigationController {
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
+        if let visibleViewController = visibleViewController {
+            return visibleViewController.supportedInterfaceOrientations()
+        } else {
+            return UIInterfaceOrientationMask.Portrait
+        }
     }
     
 }

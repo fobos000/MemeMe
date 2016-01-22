@@ -24,4 +24,12 @@ class MemeDetailViewController: UIViewController {
         
         memeImageView.image = memeImage
     }
+    
+    override func shouldAutorotate() -> Bool {
+        return true
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.All
+    }
 }

@@ -22,6 +22,10 @@ class SentMemesTabBarController: UITabBarController, UITabBarControllerDelegate 
         }
     }
     
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
+    
     @IBAction func unwindToMainMenu(sender: UIStoryboardSegue) {
         
     }

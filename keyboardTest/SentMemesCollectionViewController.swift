@@ -30,6 +30,10 @@ class SentMemesCollectionViewController: UICollectionViewController, UICollectio
         return cell
     }
     
+    override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        collectionView!.collectionViewLayout.invalidateLayout()
+    }
+        
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let cellWidth = collectionView.frame.size.width / 3
         let cellHeight = cellWidth

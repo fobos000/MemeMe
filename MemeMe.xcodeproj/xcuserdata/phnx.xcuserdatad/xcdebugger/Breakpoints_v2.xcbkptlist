@@ -98,11 +98,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "keyboardTest/SentMemesCollectionViewController.swift"
-            timestampString = "475184757.614149"
+            timestampString = "475186742.918812"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -206,16 +206,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "keyboardTest/SentMemesTabBarController.swift"
-            timestampString = "475184908.784608"
+            filePath = "keyboardTest/SentMemesCollectionViewController.swift"
+            timestampString = "475186737.596081"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "supportedInterfaceOrientations()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "willRotateToInterfaceOrientation(_:duration:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
